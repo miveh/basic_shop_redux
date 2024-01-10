@@ -1,9 +1,5 @@
-import React from 'react'
+import React from "react";
 
-function PAgeLoader() {
-  return (
-    <div>PAgeLoader</div>
-  )
+export function PageLoader() {
+  return <div>...loading</div>;
 }
-
-export default PAgeLoader
