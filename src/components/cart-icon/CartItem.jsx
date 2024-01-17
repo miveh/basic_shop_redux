@@ -10,7 +10,7 @@ import SkipPreviousIcon from "@mui/icons-material/SkipPrevious";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import SkipNextIcon from "@mui/icons-material/SkipNext";
 
-export function CartItem({ product }) {
+export function CartItem({ product, count, productAddHandler }) {
   const theme = useTheme();
 
   return (
