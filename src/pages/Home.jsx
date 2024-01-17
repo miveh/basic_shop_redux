@@ -17,7 +17,7 @@ function Home() {
     <Container maxWidth="lg" sx={{ py: "calc(2rem + 3px)" }}>
       <Grid container spacing={2}>
         {productList.map((item) => (
-          <Grid spacing={2} key={item.id} item xs={12} sm={6} md={4} lg={3}>
+          <Grid key={item.id} item xs={12} sm={6} md={4} lg={3}>
             <Box>
               <Card>
                 <CardMedia

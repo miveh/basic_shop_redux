@@ -1,14 +1,21 @@
 import { Badge, IconButton, Menu } from "@mui/material";
 import React from "react";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import { productList } from "../../constant/products";
+// import { productList } from "../../constant/products";
 import { CartItem } from "./CartItem";
+import { useSelector, useDispatch } from "react-redux";
+
 export function CartIcon() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const isOpenMenu = !!anchorEl;
+  const count = useSelector((state) => state.cart.length);
+  const productList = useSelector((state) => state.cart);
   const handleCloseMenu = () => {
     setAnchorEl(null);
   };
+
+  console.log(count);
+  console.log(productList);
 
   return (
     <>
@@ -18,7 +25,7 @@ export function CartIcon() {
         aria-label="show 4 new mails"
         color="inherit"
       >
-        <Badge badgeContent={productList.length} color="error">
+        <Badge badgeContent={count} color="error">
           <ShoppingCartIcon />
         </Badge>
       </IconButton>
@@ -31,9 +38,13 @@ export function CartIcon() {
           "aria-labelledby": "basic-button",
         }}
       >
-        {productList.map((item) => (
-          <CartItem product={item} key={item.id} />
-        ))}
+        {count === 0 ? (
+          <div>سبد خرید شما خالی است</div>
+        ) : (
+          productList.map((item) => (
+            <CartItem product={item.product} key={item.product.id} />
+          ))
+        )}
       </Menu>
     </>
   );
