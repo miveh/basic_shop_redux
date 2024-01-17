@@ -1,0 +1,16 @@
+.header {
+}
+.quickAccess {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.quickAccess__logo {
+}
+.quickAccess__search {
+}
+.quickAccess__second__menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
